@@ -15,7 +15,10 @@ app.get("/", function(req, res) {
 // })
 
 app.get("/json", function(req, res) {
-  res.json({"message": "Hello json"})
+  const mySecret = process.env['MESSAGE_STYLE']
+  console.log(".env", mySecret)
+  mySecret === "uppercase" ? 
+    res.json({"message": "HELLO JSON"}) : res.json({"message": "Hello json"}) 
 })
 
 module.exports = app;
