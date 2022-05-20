@@ -10,8 +10,12 @@ app.get("/", function(req, res) {
   res.sendFile(absolutPath)
 })
 
-app.get("/", function(req, res) {
-  res.send("Hello Express")
+// app.get("/", function(req, res) {
+//   res.send("Hello Express")
+// })
+
+app.get("/json", function(req, res) {
+  res.json({"message": "Hello json"})
 })
 
 module.exports = app;
